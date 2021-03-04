@@ -5,7 +5,7 @@ from quiz_world_cap import eurasia
 # Generate 10 quiz files.
 def quizes_rus(country_capit):
     """
-    Creates files with quizzes and answers.
+    Creates files with quizzes and answers in russian lang.
     """
     for num_quiz in range(1, 11):
 
@@ -18,7 +18,6 @@ def quizes_rus(country_capit):
             quiz_file.write('{:20s}Тест. Вариант {:d}.\nСтолицы стран мира'.format('', num_quiz))
             quiz_file.write('\n\n')
         # Shuffle the order of capitals.
-        # countries = list({**country_capit['Europe'], **country_capit['Asia']}.keys())
             countries = list(country_capit.keys())
             random.shuffle(countries)
         
