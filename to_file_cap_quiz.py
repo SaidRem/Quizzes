@@ -1,6 +1,6 @@
 from capitals import europe, asia
 import random
-from quiz_world_cap import eurasia
+
 
 # Generate 10 quiz files.
 def quizes_rus(country_capit):
