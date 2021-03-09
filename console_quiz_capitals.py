@@ -1,8 +1,20 @@
-from capitals import europe
+from capitals import europe, asia, africa, america, australia
 import random
 
+COUNTRIES = [europe['Europe'], asia['Asia'], africa['Africa'], america['America'], australia['Australia']]
 
-def cap_quiz_rus(country_caps):
+def cap_quiz_rus():
+    print('Тест по столицам стран.\nВыберите часть света: ')
+    print('Europe(0), Asia(1), Africa(2), America(3), Australia(4)')
+    while True:
+        try:
+            num = int(input('Введите цифру: '))
+            if num > 4 or num < 0:
+                continue
+            break
+        except ValueError:
+            pass
+    country_caps = COUNTRIES[num]
     countries_list = list(country_caps.keys())
     random.shuffle(countries_list)
     countries_amount = len(countries_list)
@@ -18,10 +30,11 @@ def cap_quiz_rus(country_caps):
 
 
 # TODO
-# 1. Add other continents 
+# 1. Add mode 'world'
 # 2. Exclude questions that encountered
 # 3. Score count
 # 4. Make seversal modes
 
 if __name__ == '__main__':
-    cap_quiz_rus({**europe['Europe']})
+    # cap_quiz_rus({**europe['Europe']})
+    cap_quiz_rus()
