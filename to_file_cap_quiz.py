@@ -12,11 +12,12 @@ def quizes_rus(country_capit):
         # Creating the quiz and answer key files
         
         # answer_key = open(f'capitals_quiz_answers{num_quiz}', 'w')
-        with open(f'capitals_quiz{num_quiz}.txt', 'w', encoding='utf-8') as quiz_file, \
-             open(f'capitals_quiz_answers{num_quiz}', 'w', encoding='utf-8') as answer_key:
+        with open(f'capitals_quiz{num_quiz}.txt', 'w', encoding='utf-8') as quiz_file,\
+             open(f'capitals_quiz{num_quiz}_answers.txt', 'w', encoding='utf-8') as answer_key:
             # Header for the quiz.
             quiz_file.write('{:20s}Тест. Вариант {:d}.\nСтолицы стран мира'.format('', num_quiz))
             quiz_file.write('\n\n')
+            answer_key.write('{:20s}Ответы. Вариант {}\n\n'.format('', num_quiz))
         # Shuffle the order of capitals.
             countries = list(country_capit.keys())
             random.shuffle(countries)
@@ -31,7 +32,7 @@ def quizes_rus(country_capit):
                 random.shuffle(ans_options)
                 
                 # Writing the question and the answer options to the quiz file.
-                quiz_file.write('{:d}. Столица {:s}?\n'.format(question_num+1, 
+                quiz_file.write('{:d}. Столица гос-ва {:s}?\n'.format(question_num+1, 
                                                                               countries[question_num]))
                 for abcd, option in zip("ABCD", ans_options):
                     quiz_file.write(f'{abcd}. {option}\n')
