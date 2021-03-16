@@ -26,11 +26,13 @@ def cap_quiz_rus():
 
     for _ in range(10):
         n = random.randint(0, countries_amount)
-        player_choice = input(f'Столица гос-ва {countries_list[n]}\n=> ')
-        if player_choice == country_caps[countries_list[n]]:
+        country = countries_list.pop(n)
+        countries_amount -= 1
+        player_choice = input(f'Столица гос-ва {country}\n=> ')
+        if player_choice == country_caps[country]:
             print('Совершенно верно!\n')
         else:
-            print(f'Неверно.\nПравильный ответ: {country_caps[countries_list[n]]}\n')
+            print(f'Неверно.\nПравильный ответ: {country_caps[country]}\n')
     input('Game over')
 
 
