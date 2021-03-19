@@ -23,16 +23,21 @@ def cap_quiz_rus():
     countries_list = list(country_caps.keys())
     random.shuffle(countries_list)
     countries_amount = len(countries_list)
+    score = [0, 0]
 
-    for _ in range(10):
+    while countries_list:
         n = random.randint(0, countries_amount)
         country = countries_list.pop(n)
         countries_amount -= 1
-        player_choice = input(f'Столица гос-ва {country}\n=> ')
+        player_choice = input(f'Столица гос-ва {country} ("q" для выхода)\n=> ')
+        if player_choice == 'q': break
         if player_choice == country_caps[country]:
+            score[0] += 1
             print('Совершенно верно!\n')
         else:
+            score[1] += 1
             print(f'Неверно.\nПравильный ответ: {country_caps[country]}\n')
+    print(f'Твой результат: \n{score[0]} - верных ответов \n{score[1]} - неверных ответов')
     input('Game over')
 
 
