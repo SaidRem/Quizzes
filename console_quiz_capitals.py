@@ -1,9 +1,15 @@
+import sys
+import random
 from capitals import europe, asia, africa, america, australia
 import random
 
+
 COUNTRIES = [europe['Europe'], asia['Asia'], africa['Africa'], america['America'], australia['Australia']]
 
-def cap_quiz_rus():
+def cap_quiz():
+    """
+    Тест по столицам мира.
+    """
     print('Тест по столицам стран.\nВыберите часть света: ')
     print('Europe(0), Asia(1), Africa(2), America(3), Australia(4), All(5)')
     while True:
@@ -49,4 +55,4 @@ def cap_quiz_rus():
 
 if __name__ == '__main__':
     # cap_quiz_rus({**europe['Europe']})
-    cap_quiz_rus()
+    cap_quiz()
