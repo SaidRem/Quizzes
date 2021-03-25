@@ -31,11 +31,11 @@ def cap_quiz():
     countries_amount = len(countries_list)
     score = [0, 0]
 
-    while countries_list:
-        n = random.randint(0, countries_amount)
+    while countries_amount:
+        n = random.randint(0, countries_amount-1)
         country = countries_list.pop(n)
         countries_amount -= 1
-        player_choice = input(f'Столица гос-ва {country} ("q" для выхода)\n=> ')
+        player_choice = input(f'Столица гос-ва {country} (ввод "q" для выхода)\n=> ')
         if player_choice == 'q': break
         if player_choice == country_caps[country]:
             score[0] += 1
