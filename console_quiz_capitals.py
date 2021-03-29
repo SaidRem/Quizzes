@@ -9,23 +9,29 @@ COUNTRIES = [europe['Europe'], asia['Asia'], africa['Africa'], america['America'
 def cap_quiz():
     """
     Тест по столицам мира.
+    World capitals test.
     """
     print('Тест по столицам стран.\nВыберите часть света: ')
     print('Europe(0), Asia(1), Africa(2), America(3), Australia(4), All(5)')
     while True:
+        c = []
         try:
-            num = int(input('Введите цифру: '))
-            if num > 5 or num < 0:
-                continue
+            num = input('Введите цифру или последовательность цифр: ')
+            for i in num:
+                if int(i) > 5 or int(i) < 0:
+                    continue
+                c.append(int(i))
             break
         except ValueError:
             pass
+    country_caps = {}
     if num == 5:
-        country_caps = {}
-        for c in COUNTRIES:
-            country_caps.update(c)
+        for i in COUNTRIES:
+            country_caps.update(i)
     else:
-        country_caps = COUNTRIES[num]
+        for i in c:
+            country_caps.update(COUNTRIES[i])
+
     countries_list = list(country_caps.keys())
     random.shuffle(countries_list)
     countries_amount = len(countries_list)
