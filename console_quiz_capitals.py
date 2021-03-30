@@ -54,8 +54,5 @@ def cap_quiz():
 
 
 if __name__ == '__main__':
-    # cap_quiz()
-    total = 0
-    for c in COUNTRIES:
-        total += len(c)
-    print(total)
+    cap_quiz()
+
