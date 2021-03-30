@@ -53,12 +53,9 @@ def cap_quiz():
     input('Game over')
 
 
-# TODO
-# 1. Add mode 'world'
-# 2. Exclude questions that encountered
-# 3. Score count
-# 4. Make seversal modes
-
 if __name__ == '__main__':
-    # cap_quiz_rus({**europe['Europe']})
-    cap_quiz()
+    # cap_quiz()
+    total = 0
+    for c in COUNTRIES:
+        total += len(c)
+    print(total)
